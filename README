@@ -1,0 +1,4 @@
+Config files for i3, i3status, and rxvt-unicode. 
+
+Adjust to your needs.
+with the i3status, the config REQUIRES the use of font-awesome to show the symbols properly
