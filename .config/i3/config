@@ -15,9 +15,8 @@ set $mod Mod4
 # is used in the bar {} block below.
 #font pango:monospace 8
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Terminus Sans Mono 8
+#Terminus font
+font pango:Terminus 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -35,12 +34,12 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu2_run
+# start dmenu (a program launcher) 
+bindsym $mod+d exec dmenu2_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -165,13 +164,12 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-# ALSA controls
-bindsym XF86AudioRaiseVolume exec "amixer -q sset Master,0 1+ unmute"
-bindsym XF86AudioLowerVolume exec "amixer -q sset Master,0 1- unmute"
-bindsym XF86AudioMute exec "amixer -q sset Master,0 toggle"
+# OSS controls
+bindsym XF86AudioRaiseVolume exec "mixer vol +1"
+bindsym XF86AudioLowerVolume exec "mixer vol -1"
+bindsym XF86AudioMute exec "mixer vol mute"
 
 #autostart
-#exec compton -CGb --vsync
 exec xrdb -load ~/.Xresources
 exec xcompmgr
 exec hsetroot -fill ~/Media/Pictures/2.jpg
